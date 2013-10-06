@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div#contenido
+    h2=title
+    form#generate(action='/insert/', method='post')
+      label#lblBox(for='urlBox') Sala: 
+        input#urlBox(name='url', placeholder='Escribe el nombre para tu sala...', type='text', title='Pega una URL valida de YouTube y comparte.')
+      input#btnGo(name='btnGo', type='submit', value='Generar', title='Pega una URL valida de YouTube y comparte.')
+      input#home(name='home', type='hidden', value='nothing')
+    p Comparte videos con tus amigos y chatea con ellos.
+  div#footer
+    h6 El Psy Congroo.
+  div#loader

@@ -1,0 +1,13 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/msgBoxLight.css')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/engine.js')
+    script(src='/javascripts/jquery.msgBox.js')
+  body
+    block content
+  script(src='/javascripts/analytics.js')

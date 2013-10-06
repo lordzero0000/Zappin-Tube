@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  div#frmData            
+    h2= title
+    form#zapping(action='/insert/', method='post')
+      label#lblBox(for='urlBox') Zap it! : 
+        input#urlBox(name='url', placeholder='Pega una URL de youtube...', type='text', title='Pega una URL valida de YouTube y comparte.')
+      input#btnGo(name='btnGo', type='submit', value='Zap!', title='Pega una URL valida de YouTube y comparte.')
+    p Copia y pega una URL de algún video de YouTube y compartelo con el mundo.
+  div#contenido
+    - if (videos)
+      - each video in videos
+        div#video
+          object(width='640', height='390')
+            param(name='movie', value='https://www.youtube.com/v/' + video.yid + '?version=3&autoplay=1&loop=1&showinfo=1&hide=1&disablekb=1&controls=0&amp;rel=0')
+            param(name='allowScriptAccess', value='always')
+            embed(src='https://www.youtube.com/v/' + video.yid + '?version=3&autoplay=1&loop=1&showinfo=1&hide=1&disablekb=1&controls=0&amp;rel=0', type='application/x-shockwave-flash', allowScriptAccess='always', width='640', height='390')
+        div#Datos
+          p.dark Liga al video:
+          div#liga
+            a.min(href=video.url, target='_blank') #{video.url}
+  div#footer
+    h6 El Psy Congroo.
+  div#loader
+  div#chat
+    div#messages
+      p Bienvenido a la sala <strong>'#{room}'</strong>.
+    form#userName
+      input#nameBox(name='nameBox', type='submit', value='Usuario')
+    form#chating
+      input#chatBox(name='message', placeholder='Write to chat...', type='text')

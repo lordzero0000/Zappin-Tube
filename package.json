@@ -1,0 +1,21 @@
+{
+  "name": "zappin-tube",
+  "author": "lordzer0000",
+  "version": "0.6.1-3",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.3.5",
+    "jade": "*",
+    "mongoose": "*",
+    "cheerio": "*",
+    "request": "*",
+    "socket.io": "*"
+  },
+  "subdomain": "zappintube",
+  "engines": {
+    "node": "0.10.x"
+  }
+}
