@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-	var socket = io.connect('http://zappintube.jit.su:80/');
+	var socket = io.connect(window.location.href);
 	var room = getURLParameter('r');
 	$('#chatBox').focus();
 	if (room !== "")
@@ -102,7 +102,7 @@ $(document).ready(function () {
 	}
 
 	function ytUrl (url) {
-		
+
 		var longed = "http://www.youtube.com/watch?v=";
 		var shorted = "http://youtu.be/";
 

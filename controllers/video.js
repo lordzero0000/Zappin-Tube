@@ -1,5 +1,5 @@
 var mongoose = require( 'mongoose' ),
-	db_link = 'mongodb://localhost/videos',
+	db_link = 'mongodb://rpi_user:Th15D04SN0tR3s3mbl3S@ds047632.mongolab.com:47632/db_zappin',
 	db = mongoose.connect(db_link);
 
 var video_schema = require( '../models/video' ),
@@ -64,7 +64,7 @@ exports.push = function (req, res, next) {
 	};
 
 	var inserto = new Video(video_data);
-	
+
 	inserto.save(onSaved);
 
 	function getParam( name, url )
@@ -80,7 +80,7 @@ exports.push = function (req, res, next) {
 	}
 
 	function onSaved(err){
-		
+
 		if (err){
 			console.log(err);
 			res.setHeader('content-type', 'application/json');
