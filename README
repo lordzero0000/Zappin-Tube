@@ -6,3 +6,7 @@
 	* Updated all working.
 - 20/11/2014
 	* Added some comments.
+- 12/07/2015
+  * The aplication has been dockerized.
+  > docker build -t <name> .
+  > docker run -p 80:80 <name>
